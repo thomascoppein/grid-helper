@@ -1,0 +1,41 @@
+{
+  "name": "@thomascoppein/floating-labels",
+  "version": "1.0.0",
+  "description": "NPM package for creating easily floating labels.",
+  "main": "lib/",
+  "scripts": {
+    "test": "mocha --require babel-core/register",
+    "build": "npm run lint && babel ./src -d ./lib",
+    "lint": "eslint ./src",
+    "pub": "npm publish --access public",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thomascoppein/floating-labels.git"
+  },
+  "keywords": [
+    "npm",
+    "node",
+    "javascript",
+    "input"
+  ],
+  "author": "thomascoppein",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/thomascoppein/floating-labels/issues"
+  },
+  "homepage": "https://github.com/thomascoppein/floating-labels#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "braces": "^2.3.1",
+    "eslint": "^7.20.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "mocha": "^8.3.0"
+  },
+  "dependencies": {
+    "np": "^7.4.0"
+  }
+}
