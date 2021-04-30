@@ -1,7 +1,7 @@
 {
-  "name": "@thomascoppein/floating-labels",
+  "name": "@thomascoppein/grid-helper",
   "version": "1.0.0",
-  "description": "NPM package for creating easily floating labels.",
+  "description": "NPM package for simple grid helper.",
   "main": "lib/",
   "scripts": {
     "test": "mocha --require babel-core/register",
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/thomascoppein/floating-labels.git"
+    "url": "git+https://github.com/thomascoppein/grid-helper.git"
   },
   "keywords": [
     "npm",
@@ -23,9 +23,9 @@
   "author": "thomascoppein",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/thomascoppein/floating-labels/issues"
+    "url": "https://github.com/thomascoppein/grid-helper/issues"
   },
-  "homepage": "https://github.com/thomascoppein/floating-labels#readme",
+  "homepage": "https://github.com/thomascoppein/grid-helper#readme",
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",

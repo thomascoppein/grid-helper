@@ -1,23 +1,17 @@
-# Floating Labels
+# Grid Helper
 
-NPM package for creating easily floating labels.
+NPM package for creating a grid overlay.
 
 # Installation
 
 ## Install package:
 
 ```
-npm i @thomascoppein/floating-labels
+npm i @thomascoppein/grid-helper
 ```
 
 ## Import package in Javascript file:
 
 ```javascript
-import FloatingLabels from '@thomascoppein/floating-labels';
-```
-
-## Create new Floating Labels instance:
-
-```javascript
-const floatingLabel = new FloatingLabel();
+import GridHelper from '@thomascoppein/grid-helper';
 ```
