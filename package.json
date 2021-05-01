@@ -1,6 +1,6 @@
 {
   "name": "@thomascoppein/grid-helper",
-  "version": "1.0.0",
+  "version": "1.0.6",
   "description": "NPM package for simple grid helper.",
   "main": "lib/",
   "scripts": {
@@ -18,7 +18,8 @@
     "npm",
     "node",
     "javascript",
-    "input"
+    "grid",
+    "helper"
   ],
   "author": "thomascoppein",
   "license": "MIT",

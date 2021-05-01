@@ -4,13 +4,13 @@ export default class GridHelper {
   constructor(options) {
     this.dom = document.body;
     this.head = document.head;
-    this.options = options;
+    this.options = options || '';
     this.element = '';
     this.styleEl = '';
     this.class = this.options.customClass || 'grid-helper';
     this.gutter = this.options.gutter || '30px';
     this.columns = this.options.columns || 12;
-    this.columnsColor = this.options.columnsColor || '#d4d4f7';
+    this.columnsColor = this.options.columnsColor || '#ffcfdf';
     this.zIndex = this.options.zIndex || 9999999;
     this.containerMaxWidth = this.options.containerMaxWidth || '80vw';
     this.containerPadding = this.options.containerPadding || '10vw';
@@ -30,7 +30,6 @@ export default class GridHelper {
 
   createStyleElement() {
     this.styleEl = document.createElement('style');
-    this.head.appendChild(this.styleEl);
   }
 
   createWrapper() {
@@ -47,12 +46,12 @@ export default class GridHelper {
   createColumns() {
     for (let index = 0; index < this.columns; index += 1) {
       const column = new GridColumn(this.class, index + 1);
-      this.container.appendChild(column);
+      this.container.appendChild(column.root);
     }
   }
 
   createStyles() {
-    this.stylesEl.sheet.insertRule(`
+    this.styleEl.innerHTML = `
     .${this.class} {
       position: fixed;
       display: block;
@@ -80,20 +79,22 @@ export default class GridHelper {
       height: 100%;
       width: 100%;
       max-width: ${this.containerWidth};
-      padding: ${this.containerPadding} 0;
+      padding: 0 ${this.containerPadding};
       margin: 0 auto;
     }
     .${this.class}__column {
       margin-left: ${this.gutter};
       height: 100%;
       width: ${100 / this.columns}%;
-      background: rgba(${this.columnsColor}, 0.4);
+      background-color: ${this.columnsColor};
+      opacity: 0.4;
     }
-    `);
+    `;
   }
 
   appendToDom() {
     this.dom.appendChild(this.element);
+    this.head.appendChild(this.styleEl);
   }
 
   addKeyBindings() {
@@ -108,7 +109,7 @@ export default class GridHelper {
     if (this.element.classList.contains(`${this.class}--active`)) {
       this.element.classList.remove(`${this.class}--active`);
     } else {
-      this.element.add(`${this.class}--active`);
+      this.element.classList.add(`${this.class}--active`);
     }
   }
 }
