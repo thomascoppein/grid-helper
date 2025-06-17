@@ -10,10 +10,12 @@ export default class GridHelper {
     this.class = this.options.customClass || 'grid-helper';
     this.gutter = this.options.gutter || '30px';
     this.columns = this.options.columns || 12;
+    this.columnsMobile = this.options.columnsMobile || 4;
     this.columnsColor = this.options.columnsColor || '#ffcfdf';
     this.zIndex = this.options.zIndex || 9999999;
     this.containerMaxWidth = this.options.containerMaxWidth || '80vw';
     this.containerPadding = this.options.containerPadding || '10vw';
+    this.mobileBreakpoint = this.options.mobileBreakpoint || '375px';
 
     this.init();
   }
@@ -78,7 +80,7 @@ export default class GridHelper {
       flex-direction: row;
       height: 100%;
       width: 100%;
-      max-width: ${this.containerWidth};
+      max-width: ${this.containerMaxWidth};
       padding: 0 ${this.containerPadding};
       margin: 0 auto;
     }
@@ -88,6 +90,14 @@ export default class GridHelper {
       width: ${100 / this.columns}%;
       background-color: ${this.columnsColor};
       opacity: 0.4;
+    }
+    @media (max-width: ${this.mobileBreakpoint}) {
+      .${this.class}__column {
+        width: ${100 / this.columnsMobile}%;
+      }
+      .${this.class}__column:nth-child(n+${this.columnsMobile + 1}) {
+        display: none;
+      }
     }
     `;
   }

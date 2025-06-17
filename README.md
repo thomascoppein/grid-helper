@@ -28,19 +28,23 @@ const GridHelper = new GridHelper();
 | ----------------- | --------- |
 | gutter            | '30px'    |
 | columns           | 12        |
+| columnsMobile     | 4         |
 | columnsColor      | '#ffcfdf' |
 | zIndex            | 9999999   |
 | containerMaxWidth | '80vw'    |
 | containerPadding  | '10vw'    |
+| mobileBreakpoint  | '375px'   |
 
 ```javascript
 const GridHelper = new GridHelper({
   gutter: '50px',
   columns: 12,
+  columnsMobile: 4,
   columnsColor: '#000000',
   zIndex: 999999,
   containerMaxWidth: '1600px',
   containerPadding: '5vw',
+  mobileBreakpoint: '600px',
 });
 ```
 
