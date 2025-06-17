@@ -15,6 +15,7 @@ export default class GridHelper {
     this.zIndex = this.options.zIndex || 9999999;
     this.containerMaxWidth = this.options.containerMaxWidth || '80vw';
     this.containerPadding = this.options.containerPadding || '10vw';
+    this.containerPaddingMobile = this.options.containerPaddingMobile || '16px';
     this.mobileBreakpoint = this.options.mobileBreakpoint || '375px';
 
     this.init();
@@ -97,6 +98,9 @@ export default class GridHelper {
       }
       .${this.class}__column:nth-child(n+${this.columnsMobile + 1}) {
         display: none;
+      }
+      .${this.class}__container {
+        padding: 0 ${this.containerPaddingMobile};
       }
     }
     `;

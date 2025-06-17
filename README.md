@@ -24,16 +24,17 @@ const GridHelper = new GridHelper();
 
 ## Options
 
-| property          | default   |
-| ----------------- | --------- |
-| gutter            | '30px'    |
-| columns           | 12        |
-| columnsMobile     | 4         |
-| columnsColor      | '#ffcfdf' |
-| zIndex            | 9999999   |
-| containerMaxWidth | '80vw'    |
-| containerPadding  | '10vw'    |
-| mobileBreakpoint  | '375px'   |
+| property               | default   |
+| ---------------------- | --------- |
+| gutter                 | '30px'    |
+| columns                | 12        |
+| columnsMobile          | 4         |
+| columnsColor           | '#ffcfdf' |
+| zIndex                 | 9999999   |
+| containerMaxWidth      | '80vw'    |
+| containerPadding       | '10vw'    |
+| containerPaddingMobile | '16px'    |
+| mobileBreakpoint       | '375px'   |
 
 ```javascript
 const GridHelper = new GridHelper({
@@ -44,6 +45,7 @@ const GridHelper = new GridHelper({
   zIndex: 999999,
   containerMaxWidth: '1600px',
   containerPadding: '5vw',
+  containerPaddingMobile: '3vw',
   mobileBreakpoint: '600px',
 });
 ```
