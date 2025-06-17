@@ -1,6 +1,6 @@
 {
   "name": "@thomascoppein/grid-helper",
-  "version": "1.1.0",
+  "version": "1.1.2",
   "description": "NPM package for simple grid helper.",
   "main": "lib/",
   "scripts": {
