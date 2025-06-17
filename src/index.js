@@ -55,7 +55,7 @@ export default class GridHelper {
     .${this.class} {
       position: fixed;
       display: block;
-      width: 100%;
+      width: auto;
       height: 100vh;
       top: 0;
       left: 0;
