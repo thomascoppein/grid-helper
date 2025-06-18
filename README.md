@@ -27,6 +27,7 @@ const GridHelper = new GridHelper();
 | property               | default   |
 | ---------------------- | --------- |
 | gutter                 | '30px'    |
+| gutterMobile           | '16px'    |
 | columns                | 12        |
 | columnsMobile          | 4         |
 | columnsColor           | '#ffcfdf' |
@@ -39,6 +40,7 @@ const GridHelper = new GridHelper();
 ```javascript
 const GridHelper = new GridHelper({
   gutter: '50px',
+  gutterMobile: '20px',
   columns: 12,
   columnsMobile: 4,
   columnsColor: '#000000',

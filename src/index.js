@@ -9,6 +9,7 @@ export default class GridHelper {
     this.styleEl = '';
     this.class = this.options.customClass || 'grid-helper';
     this.gutter = this.options.gutter || '30px';
+    this.gutterMobile = this.options.gutterMobile || '16px';
     this.columns = this.options.columns || 12;
     this.columnsMobile = this.options.columnsMobile || 4;
     this.columnsColor = this.options.columnsColor || '#ffcfdf';
@@ -29,6 +30,7 @@ export default class GridHelper {
     this.createStyles();
     this.appendToDom();
     this.addKeyBindings();
+    this.createToggleButton();
   }
 
   createStyleElement() {
@@ -95,6 +97,7 @@ export default class GridHelper {
     @media (max-width: ${this.mobileBreakpoint}) {
       .${this.class}__column {
         width: ${100 / this.columnsMobile}%;
+        margin-left: ${this.gutterMobile};
       }
       .${this.class}__column:nth-child(n+${this.columnsMobile + 1}) {
         display: none;
@@ -125,5 +128,30 @@ export default class GridHelper {
     } else {
       this.element.classList.add(`${this.class}--active`);
     }
+  }
+
+  createToggleButton() {
+    const button = document.createElement('button');
+    button.textContent = '⊞';
+    button.style.position = 'fixed';
+    button.style.bottom = '20px';
+    button.style.right = '20px';
+    button.style.zIndex = this.zIndex;
+    button.style.padding = '8px 12px';
+    button.style.backgroundColor = 'rgba(255, 255, 255, 0.8)';
+    button.style.border = 'none';
+    button.style.borderRadius = '4px';
+    button.style.cursor = 'pointer';
+    button.style.fontSize = '16px';
+    button.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.1)';
+    button.style.transition = 'background-color 0.3s';
+    button.addEventListener('mouseover', () => {
+      button.style.backgroundColor = 'rgba(255, 255, 255, 1)';
+    });
+    button.addEventListener('mouseout', () => {
+      button.style.backgroundColor = 'rgba(255, 255, 255, 0.8)';
+    });
+    button.addEventListener('click', () => this.toggleState());
+    this.dom.appendChild(button);
   }
 }
